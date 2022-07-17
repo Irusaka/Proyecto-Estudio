@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Barlow+Condensed:wght@800&family=Bebas+Neue&family=Inter:wght@400;700&family=Lexend+Deca&family=Lobster&family=Open+Sans&family=Outfit:wght@300;400;500;700;800&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;900&family=Rubik:wght@300;400;500;600;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+nav {
+    height: 100px;
+    background: rgb(51, 93, 55);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+nav ul {
+    grid-column: 3/4;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+}
+nav ul li {
+    list-style-type: none;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: Rubik;
+    font-weight: 800;
+    color: rgb(168, 201, 162);
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0px 10px;
+}
+nav ul li a {
+    color: rgb(168, 201, 162);
+    text-decoration: none;
+}
+.video video {
+    position: absolute;
+    width: min(100vw);
+    bottom: -150vh;
+    z-index: 2;
+    animation-name: video;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+@keyframes video {
+    100%{
+        bottom: 0;
+    }
+}
+.container {
+    width: 100%;
+    height: min(100vh - 100px);
+    display: grid;
+    grid-template-columns: 1fr 80px 80px 1fr;
+    grid-template-rows: 1fr 80px 80px 1fr;
+}
+.btn-piece-place{
+    z-index: 2;
+}
+.btn-piece-place:nth-of-type(1) {
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+.btn-piece-place:nth-of-type(2){
+    grid-row: 2/3;
+    grid-column: 3/4;
+}
+.btn-piece-place:nth-of-type(3){
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+.btn-piece-place:nth-of-type(4){
+    grid-row: 3/4;
+    grid-column: 3/4;
+}
+#piece-1{
+    width: 84px;
+    height: 80px;
+    position: relative;
+    right: 4px;
+}
+#piece-2{
+    width: 82px;
+    height: 90px;
+    position:relative;
+    bottom: 10px;
+}
+#piece-3{
+    width: 80px;
+}
+#piece-4{
+    width: 80px;
+    height: 83px;
+}
+.centro{
+    width: 160px;
+    height: 160px;
+    grid-row: 2/4;
+    grid-column: 2/4;
+    opacity: 0.2;
+    z-index: 2;
+}
+#piece-container-1,#piece-container-2,#piece-container-3,#piece-container-4{
+    position: absolute;
+}
+#piece-container-1{
+    bottom: -10px;
+    right: -10px;
+}
+#piece-container-2{
+    right: 240px;
+    top:40px;
+}
+#piece-container-3{
+    left: 30%;
+    bottom: 30%;
+}
+.alas::before{
+    content: "";
+    width: 130px;
+    height: 130px;
+    background: url(./recursos/bro-izq.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    left: min(50% - 100px);
+    top: min(50%);
+    transform: rotateZ(-40deg) scale(0.5);
+    animation-name: alaIzquierda;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes alaIzquierda {
+    100%{
+        left: min(50% - 176px);
+        top: min(50% - 45px);
+        transform: rotateZ(0deg) scale(1);
+    }
+}
+.alas::after{
+    content: "";
+    width: 130px;
+    height: 130px;
+    background: url(./recursos/bro-der.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    right: min(50% - 100px);
+    top: min(50%);
+    transform: rotateZ(40deg) scale(0.5);
+    animation-name: alaDerecha;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes alaDerecha {
+    100%{
+        right: min(50% - 174px);
+        top: min(50% - 45px);
+        transform: rotateZ(0deg) scale(1);
+    }
+}
+.cabeza::after{
+    content: "";
+    width: 80px;
+    height: 80px;
+    background: url(./recursos/bro-cabeza.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    right: min(50% - 38px);
+    top: min(50%);
+    animation-name: cabeza;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes cabeza {
+    100%{
+        top: min(50% - 70px);
+    }
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header flex">
+        <hr>
+        <nav class="nav">
+
+        </nav>
+        <hr>
+    </header>
+    <main class="main">
+        <h1>Bienvenido<br>al Mundo de las Pseudoclasses</h1>
+        <div class="clases">
+            <div class="active flex h-shadow">
+                <button id="active__btn" class="active__btn btn">To The Moon</button>
+                <label class="active__label-p" for="active__btn">
+                    <div class="active__pilar"></div>
+                </label>
+                <div class="info__container">
+                    <i id="info__icon" class="fa-solid fa-circle-info"></i>
+                    <label class="info__label-i" for="info__icon">
+                        <p>active<br><a style="font-weight: 400; color: black;text-decoration: none;" target="_blank" href="https://developer.mozilla.org/es/docs/Web/CSS/:active">https://developer.mozilla.org/es/docs/Web/CSS/:active</a></p>
+                    </label>
+                </div>
+            </div>
+            <div class="checked flex h-shadow">
+                <input type="checkbox" name="a" class="checked__input" id="checkbox">
+                <label class="checked__label-c" for="checkbox"></label>
+                <input type="checkbox" name="b" class="checked__input-sm" id="checkbox-sm">
+                <label class="checked__label-c-sm" for="checkbox-sm"></label>
+                <div class="info__container">
+                    <i id="info__icon" style="color: rgb(224, 224, 224);" class="fa-solid fa-circle-info"></i>
+                    <label class="info__label-i" for="info__icon">
+                        <p>checked<br><a style="font-weight: 400; color: black;text-decoration: none;" target="_blank" href="https://developer.mozilla.org/es/docs/Web/CSS/:checked">https://developer.mozilla.org/es/docs/Web/CSS/:checked</a></p>
+                    </label>
+                </div>
+            </div>
+            <div class="default flex h-shadow">
+                <div class="default__column">
+                    <h3 class="default__title">Helado?</h3>
+                    <select name="" id="" class="default__select">
+                        <option value="">Seguro, Helado</option>
+                        <option value="">Helado</option>
+                        <option value="">Pizza</option>
+                        <option value="" selected>Helado - default</option>
+                    </select>
+                    <div class="custome-arrow"></div>
+                </div>
+                <div class="info__container">
+                    <i id="info__icon" style="color: rgb(30, 30, 30);" class="fa-solid fa-circle-info"></i>
+                    <label class="info__label-i" for="info__icon">
+                        <p>default<br><a style="font-weight: 400; color: black;text-decoration: none;" target="_blank" href="https://developer.mozilla.org/es/docs/Web/CSS/:default">https://developer.mozilla.org/es/docs/Web/CSS/:default</a></p>
+                    </label>
+                </div>
+            </div>
+            <div class="dir flex h-shadow">
+                <div class="dir__text">
+                    <p class="dir__text-s">A fin de tener mayor accesibilidad se a añadido un estilo y atributo a css y html respectivamente para los textos de otros idiomas que se leen de derecha a izquierda</p>
+                    <p class="dir__text-e" dir="rtl">לעזאזל עם מי שקורא</p>
+                </div>
+                <div class="info__container">
+                    <i id="info__icon" class="fa-solid fa-circle-info"></i>
+                    <label class="info__label-i" for="info__icon">
+                        <p style="color: black;">dir()<br><a style="font-weight: 400; color: black;text-decoration: none;" target="_blank" href="https://developer.mozilla.org/es/docs/Web/CSS/:dir">https://developer.mozilla.org/es/docs/Web/CSS/:dir</a></p>
+                    </label>
+                </div>
+            </div>
+            <div class="disabled flex h-shadow">
+                <button class="btn disabled__btn" id="disabled__btn-1">Botones</button>
+                <button class="btn disabled__btn" id="disabled__btn-2">Celosos</button>
+                <div class="info__container">
+                    <i id="info__icon" style="color:rgb(230,230,230);" class="fa-solid fa-circle-info"></i>
+                    <label class="info__label-i" for="info__icon">
+                        <p style="color: black;">disabled<br><a style="font-weight: 400; color: black;text-decoration: none;" target="_blank" href="https://developer.mozilla.org/es/docs/Web/CSS/:disabled">https://developer.mozilla.org/es/docs/Web/CSS/:disabled</a></p>
+                    </label>
+                </div>
+            </div>
+            <div class="empty flex h-shadow">
+                <div class="empty__vacio"></div>
+                <div class="info__container">
+                    <i id="info__icon" style="color:rgb(240, 240, 240);" class="fa-solid fa-circle-info"></i>
+                    <label class="info__label-i" for="info__icon">
+                        <p>empty<br><a style="font-weight: 400; color: black;text-decoration: none;" target="_blank" href="https://developer.mozilla.org/es/docs/Web/CSS/:empty">https://developer.mozilla.org/es/docs/Web/CSS/:empty</a></p>
+                    </label>
+                </div>
+            </div>
+            <div class="enabled flex h-shadow">
+                <div class="enabled__question">
+                    <input type="radio" name="" id="enabled__input-1" class="enabled__input" disabled>
+                    <label for="enabled__input-1">Mala</label>
+                    <input type="radio" name="" id="enabled__input-2" class="enabled__input" disabled>
+                    <label for="enabled__input-2">Ni bien, ni mal</label>
+                    <input type="radio" name="" id="enabled__input-3" class="enabled__input">
+                    <label for="enabled__input-3">Super excelente</label>
+                </div>
+                <div class="info__container">
+                    <i id="info__icon" style="color: #3d3d35;" class="fa-solid fa-circle-info"></i>
+                    <label class="info__label-i" for="info__icon">
+                        <p>enabled<br><a style="font-weight: 400; color: black;text-decoration: none;" target="_blank" href="https://developer.mozilla.org/es/docs/Web/CSS/:enabled">https://developer.mozilla.org/es/docs/Web/CSS/:enabled</a></p>
+                    </label>
+                </div>
+            </div>
+            <div class="first flex h-shadow">
+                <button class="first__btn btn">Imprimir</button>
+                <div class="info__container">
+                    <i id="info__icon" style="color: rgb(77, 49, 49); background: rgb(242, 242, 242); border-radius: 70%;" class="fa-solid fa-circle-info"></i>
+                    <label class="info__label-i" for="info__icon">
+                        <p style="right: 0;">first<br><a style="font-weight: 400; color: black;text-decoration: none;" target="_blank" href="https://developer.mozilla.org/es/docs/Web/CSS/:first">https://developer.mozilla.org/es/docs/Web/CSS/:first</a></p>
+                    </label>
+                </div>
+            </div>
+            <div class="first-child flex h-shadow">
+                <div class="first-child__elements">We Are Number One</div>
+                <div class="first-child__elements">Soy el segundo hijo</div>
+                <div class="first-child__elements">Soy el tercero hijo</div>
+                <div class="info__container">
+                    <i id="info__icon" class="fa-solid fa-circle-info"></i>
+                    <label class="info__label-i" for="info__icon">
+                        <p style="right: 0;">first-child<br><a style="font-weight: 400; color: black;text-decoration: none;" target="_blank" href="https://developer.mozilla.org/es/docs/Web/CSS/:first-child">https://developer.mozilla.org/es/docs/Web/CSS/:first-child</a></p>
+                    </label>
+                </div>
+            </div>
+            <div class="first-of-type flex h-shadow">
+                <div class="first-of-type__elements">
+                    <img src="https://as01.epimg.net/meristation/imagenes/2021/10/06/noticias/1633514535_199538_1633514571_noticia_normal.jpg" alt="">
+                    <p>Soy Batman I Am Batman soy batman i am batman soy BATMAN i am BATMAN batman Batman BATMAN sOy BaTmaN i aM BaTmaN manbat soy mAn bAT si, ese soy yo, batman yes it's me manbat BATMAN</p>
+                </div>
+                <div class="first-of-type__elements">Soy el segundo de este tipo</div>
+                <div class="first-of-type__elements">Soy el tercero de este tipo</div>
+                <div class="info__container">
+                    <i id="info__icon" class="fa-solid fa-circle-info"></i>
+                    <label class="info__label-i" for="info__icon">
+                        <p>first-of-type<br><a style="font-weight: 400; color: black;text-decoration: none;" target="_blank" href="https://developer.mozilla.org/es/docs/Web/CSS/:first-of-type">https://developer.mozilla.org/es/docs/Web/CSS/:first-of-type</a></p>
+                    </label>
+                </div>
+            </div>
+            <div class="fullscreen flex h-shadow">
+                <button class="btn fullscreen__btn">Pantalla completa</button>
+                <button class="btn fullscreen__btn">Salir de pantalla completa</button>
+                <div class="info__container">
+                    <i style="color:rgb(58, 71, 96); background: rgb(213, 213, 213); border-radius: 70%;" id="info__icon" class="fa-solid fa-circle-info"></i>
+                    <label class="info__label-i" for="info__icon">
+                        <p>fullscreen<br><a style="font-weight: 400; color: black;text-decoration: none;" target="_blank" href="https://developer.mozilla.org/es/docs/Web/CSS/:fullscreen">https://developer.mozilla.org/es/docs/Web/CSS/:fullscreen</a></p>
+                    </label>
+                </div>
+            </div>
+            <div class="focus h-shadow flex">
+                <div class="focus__input-c">
+                    <input id="focus__text" type="text" class="focus__text">
+                    <label for="focus__text" class="focus__label">Nombre:</label>
+                </div>
+                <div class="info__container">
+                    <i style="color: rgb(112, 142, 174);" id="info__icon" class="fa-solid fa-circle-info"></i>
+                    <label class="info__label-i" for="info__icon">
+                        <p style="width: 190px;">focus & focus-within <span style="font-weight: 300;">(dentro de focus, encontraras un link al focus-within)</span><br><a style="font-weight: 400; color: black;text-decoration: none;" target="_blank" href="https://developer.mozilla.org/es/docs/Web/CSS/:focus">https://developer.mozilla.org/es/docs/Web/CSS/:focus</a></p>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/js/index.js"></script>
+    <script src="https://kit.fontawesome.com/75578a8f34.js" crossorigin="anonymous"></script>
+</body>
+</html>
