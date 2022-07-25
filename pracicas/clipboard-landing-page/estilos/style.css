@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+:root{
+    --Strong-Cyan: hsl(171, 66%, 44%);
+    --Light-Blue: hsl(233, 100%, 69%);
+    --Dark-Grayish-Blue: hsl(210, 10%, 33%);
+    --Grayish-Blue: hsl(201, 11%, 66%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,main{
+    display: flex;
+    flex-direction: column;
+}
+main{
+    width: 1440px;
+}
+/* -----BEFORE-FIRST-IMAGE----- */
+
+.header{
+    width: 100%;
+}
+.header img{
+    margin: 115px auto 0;
+    display: block;
+    width: 8%;
+}

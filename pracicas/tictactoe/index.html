@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="main">
+        <div class="menu ttt__grid">
+            <div class="ttt__title flex-column">
+                <h1>TIC TAC<br><span style="font-size: 45px;">TOE</span></h1>
+                <div class="flex-row">
+                    <div class="x"></div>
+                    <div class="o"></div>
+                </div>
+            </div>
+            <div class="ttt__select-c flex-column">
+                <h2>PICK PLAYER 1'S MARK</h2>
+                <div class="ttt__select flex-row">
+                    <button class="ttt__select-btn">
+                        <div class="turn" id="x"></div>
+                    </button>
+                    <button class="ttt__select-btn" disabled>
+                        <div class="turn" id="o"></div>
+                    </button>
+                </div>
+                <p>REMENBER : X GOES FIRST</p>
+            </div>
+            <div class="ttt__newgame flex-column">
+                <button class="ttt__btn" id="vs__cpu">NEW GAME (VS CPU)</button>
+                <button class="ttt__btn" id="vs__p">NEW GAME (VS PLAYER)</button>
+            </div>
+        </div>
+        <div class="game">
+            <div class="game__header flex-row">
+                <div class="game__turnselect flex-row">
+                    <div class="turn" id="x"></div>
+                    <div class="turn" id="o"></div>
+                </div>
+                <div class="game__turnindicator flex-row">
+                    <div class="game__turn" id="x"></div>
+                    <p>TURN</p>
+                </div>
+                <button class="game__goback" id="gobacktomenu"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="game__gamegrid">
+                <div class="celdas" id="0"></div>
+                <div class="celdas" id="1"></div>
+                <div class="celdas" id="2"></div>
+                <div class="celdas" id="3"></div>
+                <div class="celdas" id="4"></div>
+                <div class="celdas" id="5"></div>
+                <div class="celdas" id="6"></div>
+                <div class="celdas" id="7"></div>
+                <div class="celdas" id="8"></div>
+            </div>
+            <div class="game__status flex-row">
+                <div class="game__counter flex-column">
+                    <p id="playerOne">X</p>
+                    <p id="counter__x">14</p>
+                </div>
+                <div class="game__counter flex-column">
+                    <p>TIES</p>
+                    <p  id="counter__ties">32</p>
+                </div>
+                <div class="game__counter flex-column">
+                    <p id="playerTwo">O</p>
+                    <p id="counter__o">11</p>
+                </div>
+            </div>
+            <button class="game__restart"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+            <!-- =====WINDOWS===== -->
+            <div class="windows">
+                <div class="win flex-column">
+                    <p>YOU WON!</p>
+                    <div class="win__whowon flex-row">
+                        <div id="x"></div>
+                        <p>TAKES THE ROUND</p>
+                    </div>
+                    <div class="win__btn-c">
+                        <button class="win__btn" id="win__btn-quit">QUIT</button>
+                        <button class="win__btn" id="win__btn-nextround">NEXT ROUND</button>
+                    </div>
+                </div>
+                <div class="change flex-column">
+                    <p>WARNING!</p>
+                    <p>If you change the mark of the first player, you will lose the proggres of score</p>
+                    <input type="checkbox" class="change__chk" name="change__chk" id="change__dama">
+                    <label for="change__dama">DON'T ASK ME AGAIN</label>
+                    <div class="change__btn-c">
+                        <button class="change__btn" id="change__btn-accept">ACCEPT</button>
+                        <button class="change__btn" id="change__btn-cancel">CANCEL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <script src="/js/index.js"></script>
+    <script src="https://kit.fontawesome.com/75578a8f34.js" crossorigin="anonymous"></script>
+</body>
+</html>

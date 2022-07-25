@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Bebas+Neue&family=Lobster&family=Poppins:wght@300;500&family=Roboto:wght@400;500;900&family=Rubik:wght@300;400;500;600;700;800&display=swap');
+:root {
+    --height-nav: 80px;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header, .logo, header div nav ul, .about-us, .from, .git{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+header{
+    justify-content: space-between;
+    height: var(--height-nav);
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    background-color: rgb(243,243,243);
+}
+.logo{
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    font-size: 2em;
+    color: rgb(30,30,30);
+}
+.logo div img{
+    height: 80px;
+    margin: 0.25em 1em 0 0;
+}
+header div nav ul{
+    list-style-type: none;
+    padding-right: 2em;
+}
+header div nav ul li a{
+    padding: 0.8em 1.2em;
+    color: rgb(30,30,30);
+    font-family: Rubik;
+    font-weight: 300;
+    font-size: 1.5em;
+    text-underline-position: under;
+}
+.main{
+    background: url(./principal.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: 0%;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+.main::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20,20,20,0.55);
+}
+.main h2{
+    font-size: 10em;
+    font-family: "Bebas Neue";
+    margin: auto;
+    align-self: center;
+    color: rgb(243,243,243);
+    text-shadow: 0 0 4px black;
+    z-index: 1;
+}
+.about-us{
+    height: 70vh;
+    width: 100%;
+    background: rgb(244,248,251);
+    justify-content: space-between;
+}
+.description{
+    width: 50%;
+    padding: 0 14em 0 8em;
+}
+.description h3 {
+    padding: 1em 0;
+    font-size: 2.4em;
+    font-family: "Segoe UI", Roboto;
+    font-weight: 600;
+    padding-left: 0.5em;
+}
+.description p {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    font-family: Roboto;
+}
+.img-community{
+    width: 50%;
+}
+.about-us div img {
+    width: 100%;
+}
+.contacts {
+    height: 18vh;
+    width: 100%;
+    background: rgb(245,245,245);
+    border-top: 1px solid white;
+}
+.from {
+    height: 70%;
+    width: 100%;
+    
+    padding-left: 15%;
+    color: rgb(97,97,97);
+}
+.from ul li{
+    list-style-type: none;
+    padding: 0.4em 1em;
+    font-size: 1.15em;
+}
+.git{
+    height: 30%;
+    width: 100%;
+
+    padding-left: 15%;
+    margin-top: -1.1em;
+    font-size: 1.15em;
+}
+.git p {
+    color: rgb(62,62,62);
+}
+.img-git {
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    padding-left: 1em;
+    
+}
+.img-git:hover {
+    cursor: pointer;
+}
+.img-git:active {
+    padding-top: 7px;
+    transition: 0.2s;
+}
+.img-sup {
+    height: 25px;
+    margin: auto;
+}
+.img-inf{
+    height: 15px;
+}
+.img-git div img{
+    height: 100%;
+}
+footer {
+    background: rgb(245,245,245);
+}
+footer p{
+    text-align: end;
+    padding-right: 20px;
+    color: rgb(97,97,97);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*Line height de los LABEL del mismo tamaño que los inputs*/
+
+
+/*Formularios*/
+.close {
+    position: fixed;
+    top:var(--height-nav);
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: all 0.5s ease;
+    visibility: hidden;
+    backdrop-filter: blur(10px);
+    cursor: default;
+    opacity: 1;
+}
+.close:target {
+    opacity: 1;
+    visibility: hidden;
+}
+.sing-up {
+    width: 300px;
+    position: fixed;
+    right: -300px;
+    top: var(--height-nav);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(243,243,243);
+    font-family: Rubik, Helvetica, sans-serif;
+    padding: 15px;
+    z-index: 1;
+    color: rgb(45,45,45);
+    border-bottom-left-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 8px -12px inset;
+    transition: all 0.2s ease;
+}
+.sing-up:target {
+    right: 0;
+}
+.sing-up:target + .close {
+    visibility: visible;
+    opacity: 1;
+}
+.sing-up > img {
+    width: 55px;
+    margin: 0 auto;
+}
+h4 {
+    font-size: 1.7em;
+    padding: 0.3em 0 0.5em 0;
+}
+form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+form > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+form div > input {
+    width: 85%;
+    padding: 0.3em 0.5em;
+    line-height: 24px;
+    margin: 0.6em 0;
+    border-radius: 5px;
+    border: 2px solid rgb(45,45,45);
+    font-family: Rubik;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+form div > input[type="text"]:hover, form div > input[type="password"]:hover {
+    background: rgb(230,230,230);
+}
+input[type="button"] {
+    background: rgb(45,45,45);
+    color: rgb(230,230,230);
+}
+input[type="button"]:hover {
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 6px 4px;
+    position: relative;
+    top:-1px;
+    cursor: pointer;
+}
+input[type="button"]:active {
+    top:0px;
+    opacity: 0.98;
+}
+.sing-up div p{
+    margin-top: 0.5em;
+    font-weight: 400;
+}
+#terms {
+    display: none;
+}
+#terms:checked + label:before {
+    border-radius: 50%;
+    width:8px;
+    height: 8px;
+    bottom: 8px;
+    left:8px;
+    background: radial-gradient(circle, rgb(41, 161, 47) 0%,rgb(41, 161, 47) 50%,rgba(245,245,245,1) 50%,rgba(245,245,245,1) 100%);
+} 
+.inputs label{
+    margin: 0.5em;
+    font-weight: 400;
+    position: relative;
+    padding: 0.3em 0.5em 0.3em 1.8em;
+    border-radius: 3px;
+    user-select: none; 
+}
+.inputs label:hover {
+    cursor: pointer;
+    background:rgb(200,200,200);
+}
+.inputs label::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgb(45,45,45);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
