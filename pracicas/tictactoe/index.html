@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="google" value="notranslate">
+    <title>TicTacToe</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/fav-ico.png" type="image/x-icon">
 </head>
 <body>
     <main class="main">
@@ -14,18 +16,21 @@
             <div class="ttt__title flex-column">
                 <h1>TIC TAC<br><span style="font-size: 45px;">TOE</span></h1>
                 <div class="flex-row">
-                    <div class="x"></div>
-                    <div class="o"></div>
+                    <div id="xo"></div>
+                    <div id="ox"></div>
                 </div>
             </div>
             <div class="ttt__select-c flex-column">
                 <h2>PICK PLAYER 1'S MARK</h2>
                 <div class="ttt__select flex-row">
-                    <button class="ttt__select-btn">
-                        <div class="turn" id="x"></div>
+                    <!-- esta no es la mejor forma de hacer esto, tuve errores en puntos avanzados del proyectos con esta forma de trabajar 
+                    que tomarian demasiadas modificaciones para arreglarlo y llevar a posibles nuevos errores, lo mejor hubiese sido
+                    no tener que color el div y el label dentro del button -->
+                    <button class="ttt__select-btn uneffect-btn" disabled>
+                        <div class="turn" id="x"><label class="turn__aux" for="x"></label></div>
                     </button>
-                    <button class="ttt__select-btn" disabled>
-                        <div class="turn" id="o"></div>
+                    <button class="ttt__select-btn select-btn-active">
+                        <div class="turn" id="o"><label class="turn__aux-nmt" for="o"></label></div>
                     </button>
                 </div>
                 <p>REMENBER : X GOES FIRST</p>
@@ -45,7 +50,7 @@
                     <div class="game__turn" id="x"></div>
                     <p>TURN</p>
                 </div>
-                <button class="game__goback" id="gobacktomenu"><i class="fa-solid fa-arrow-right"></i></button>
+                <button class="game__goback" id="gobacktomenu"><i class="fa-solid fa-arrow-left"></i></button>
             </div>
             <div class="game__gamegrid">
                 <div class="celdas" id="0"></div>
@@ -60,33 +65,33 @@
             </div>
             <div class="game__status flex-row">
                 <div class="game__counter flex-column">
-                    <p id="playerOne">X</p>
-                    <p id="counter__x">14</p>
+                    <p id="playerX">X</p>
+                    <p id="counter__x">0</p>
                 </div>
                 <div class="game__counter flex-column">
                     <p>TIES</p>
-                    <p  id="counter__ties">32</p>
+                    <p  id="counter__ties">0</p>
                 </div>
                 <div class="game__counter flex-column">
-                    <p id="playerTwo">O</p>
-                    <p id="counter__o">11</p>
+                    <p id="playerO">O</p>
+                    <p id="counter__o">0</p>
                 </div>
             </div>
             <button class="game__restart"><i class="fa-solid fa-arrow-rotate-left"></i></button>
             <!-- =====WINDOWS===== -->
-            <div class="windows">
-                <div class="win flex-column">
-                    <p>YOU WON!</p>
+            <div class="windows animacion-windows">
+                <div class="win animation-win flex-column">
+                    <p class="win__paragraph">YOU WON!</p>
                     <div class="win__whowon flex-row">
-                        <div id="x"></div>
-                        <p>TAKES THE ROUND</p>
+                        <div class="win__whowon-mark" id="x"></div>
+                        <p class="win__whowon-text">TAKES THE ROUND</p>
                     </div>
                     <div class="win__btn-c">
-                        <button class="win__btn" id="win__btn-quit">QUIT</button>
                         <button class="win__btn" id="win__btn-nextround">NEXT ROUND</button>
+                        <button class="win__btn" id="win__btn-quit">QUIT</button>
                     </div>
                 </div>
-                <div class="change flex-column">
+                <div class="change animation-change flex-column">
                     <p>WARNING!</p>
                     <p>If you change the mark of the first player, you will lose the proggres of score</p>
                     <input type="checkbox" class="change__chk" name="change__chk" id="change__dama">
@@ -98,7 +103,6 @@
                 </div>
             </div>
         </div>
-        
     </main>
     <script src="/js/index.js"></script>
     <script src="https://kit.fontawesome.com/75578a8f34.js" crossorigin="anonymous"></script>

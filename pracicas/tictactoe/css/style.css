@@ -19,13 +19,21 @@
     letter-spacing: 1px;
     user-select: none;
 }
-.main{
-    width: 100vw;
-    height: 100vh;
+body{
+    background: var(--background);
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.main{
+    padding-top: 10px;
+    width: 375px;
+    height: 750px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
 /*=====X-O=====*/
 #x{
     position: relative;
@@ -55,7 +63,40 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 9px solid var(--o)
+    border: 9px solid var(--o);
+    position: relative;
+}
+/*=====X-O-INVERTIDOS=====*/
+#xo{
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+#xo::before, #xo::after {
+    content: "";
+    background: var(--o);
+    position: absolute;
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+#xo::after{
+    width: 30px;
+    height: 10px;
+    left: 0;
+    top: 10px;
+}
+#xo::before{
+    top: 0;
+    left: 10px;
+    width: 10px;
+    height: 30px;
+}
+#ox{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 9px solid var(--x);
+    position: relative;
 }
 
 
@@ -64,12 +105,10 @@
 
 
 .menu{
-    position: absolute;
-
-
-
-    /*===HIDDEN===*/
-    /* visibility: hidden; */
+    position: relative;
+    transition: all 0.4s ease;
+    left: 0;
+    min-width: 375px;
 }
 .flex-column {
     display: flex;
@@ -85,7 +124,7 @@
     grid-template-rows: 200px 230px 280px;
     justify-items: center;
     background: var(--background);
-    padding: 20px;
+    padding: auto;
 }
 /*=====TITLE=====*/
 .ttt__title{
@@ -133,11 +172,11 @@
     display: flex;
     justify-content: center;
     padding: 10px;
-    cursor: pointer;
 }
 .ttt__select-btn{
     background: none;
     box-shadow: none;
+    transition: all 0.1s ease;
 }
 .ttt__select-btn > #x::after, .ttt__select-btn > #x::before {
     background: var(--text);
@@ -149,6 +188,9 @@
 .select-btn-active{
     background: var(--text);
     box-shadow: 0px 3px 0px var(--text__shadow);
+    position: relative;
+    transition: all 0.1s ease;
+    bottom: 0px;
 }
 .select-btn-active > #x::after, .select-btn-active > #x::before {
     background: var(--background);
@@ -156,8 +198,29 @@
 .select-btn-active > #o {
     border-color: var(--background);
 }
+.select-btn-active:hover{
+    bottom: 3px;
+    box-shadow: 0px 5px 0px var(--text__shadow);
+}
+.select-btn-active:active{
+    bottom: -2px;
+    box-shadow: 0px 1px 0px var(--text__shadow);
+}
 /*fin active*/
-
+.turn__aux,.turn__aux-nmt{
+    position: absolute;
+    width: 132px;
+    height: 50px;
+    cursor: pointer;
+}
+.turn__aux{
+    top: -10px;
+    left: -51px;
+}
+.turn__aux-nmt{
+    top: -19px;
+    left: -60px;
+}
 /*=====GAME-MODE=====*/
 .ttt__newgame {
     width: 100%;
@@ -170,14 +233,36 @@
     color: var(--background);
     font-weight: 900;
     cursor: pointer;
+    position: relative;
+    bottom: 0;
+    transition: all 0.1s ease;
 }
 .ttt__btn:nth-of-type(1){
     box-shadow: 0px 8px 0px var(--o__shadow);
     background: var(--o);
 }
+.ttt__btn:nth-of-type(1):hover{
+    box-shadow: 0px 11px 0px var(--o__shadow);
+    bottom: 3px;
+    background: var(--o);
+}
+.ttt__btn:nth-of-type(1):active{
+    box-shadow: 0px 4px 0px var(--o__shadow);
+    bottom: -4px;
+    background: var(--o);
+}
 .ttt__btn:nth-of-type(2){
-    
     box-shadow: 0 8px 0 var(--x__shadow);
+    background: var(--x);
+}
+.ttt__btn:nth-of-type(2):hover{
+    box-shadow: 0px 11px 0px var(--x__shadow);
+    bottom: 3px;
+    background: var(--x);
+}
+.ttt__btn:nth-of-type(2):active{
+    box-shadow: 0px 4px 0px var(--x__shadow);
+    bottom: -4px;
     background: var(--x);
 }
 
@@ -190,13 +275,11 @@
 .game {
     display: grid;
     grid-template-rows: 100px 370px 170px 110px;
-    padding: 30px;
-    width: 375px;
+    padding: auto;
+    min-width: 375px;
     justify-items: center;
     background: var(--background);
-    position: absolute;
-    /*===HIDDEN===*/
-    visibility: hidden;
+    position: relative;
 }
 .game__header {
     justify-content: space-between;
@@ -240,7 +323,7 @@
 }
 .game__turnindicator > #o {
     transform: scale(0.6);
-    background: var(--text);
+    border-color: var(--text);
 }
 /* =====FIN-MINI-X-O===== */
 .game__goback {
@@ -253,6 +336,17 @@
     font-size: 22px;
     box-shadow: 0px 4px 0px var(--text__shadow);
     cursor: pointer;
+    position: relative;
+    bottom: 0;
+    transition: all 0.1s ease;
+}
+.game__goback:hover{
+    box-shadow: 0px 7px 0px var(--text__shadow);
+    bottom: 3px;
+}
+.game__goback:active{
+    box-shadow: 0px 2px 0px var(--text__shadow);
+    bottom: -3px;
 }
 /*=====GAMEGRID=====*/
 .game__gamegrid{
@@ -262,6 +356,7 @@
     gap: 25px 22px;
     justify-content: center;
     align-content: center;
+    position: relative;
 }
 .celdas {
     background: var(--btn__background);
@@ -320,6 +415,17 @@
     border-radius: 8px;
     background: var(--text);
     cursor: pointer;
+    transition: all 0.1s ease;
+    position: relative;
+    bottom: 0;
+}
+.game__restart:hover{
+    box-shadow: 0 8px 0 var(--text__shadow);
+    bottom: 3px;
+}
+.game__restart:active{
+    box-shadow: 0 2px 0 var(--text__shadow);
+    bottom: -3px;
 }
 
 
@@ -332,13 +438,14 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0,0.35);
+    background: rgb(0, 0, 0, 0);
     display: flex;
     align-items: center;
 
 
     /*===HIDDEN===*/
-    visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
 }
 /*=====WIN=====*/
 .win{
@@ -349,10 +456,7 @@
     background: var(--btn__background);
     padding: 25px 20px;
     position: absolute;
-
-
-    /*===HIDDEN===*/
-    visibility: hidden;
+    display: none;
 }
 .win > p:nth-of-type(1){
     color: var(--text);
@@ -375,30 +479,46 @@
     font-size: 16px;
     color: var(--background);
     cursor: pointer;
+    position: relative;
+    bottom: 0;
+    transition: all 0.1s ease;
 }
 .win__btn:nth-of-type(1){
-    background: var(--text);
-    box-shadow: 0 4px 0 var(--text__shadow);
-}
-.win__btn:nth-of-type(2){
     background: var(--o);
     box-shadow: 0 4px 0 var(--o__shadow);
 }
-/*=====CHANGE-FIRST=====*/
+.win__btn:nth-of-type(1):hover{
+    box-shadow: 0 7px 0 var(--o__shadow);
+    bottom: 3px;
+}
+.win__btn:nth-of-type(1):active{
+    box-shadow: 0 3px 0 var(--o__shadow);
+    bottom: -3px;
+}
+.win__btn:nth-of-type(2){
+    background: var(--text);
+    box-shadow: 0 4px 0 var(--text__shadow);
+    transform: scale(0.8);
+}
+.win__btn:nth-of-type(2):hover{
+    box-shadow: 0 7px 0 var(--text__shadow);
+    bottom: 3px;
+}
+.win__btn:nth-of-type(2):active{
+    box-shadow: 0 3px 0 var(--text__shadow);
+    bottom: -3px;
+}
+/*=====CHANGE=====*/
 .change{
     justify-content: space-evenly;
     align-items: center;
     height: 250px;
     width: 100%;
     background: var(--btn__background);
-    
     padding: 25px 50px;
     position: absolute;
     text-align: center;
-
-
-    /*===HIDDEN===*/
-    visibility: hidden;
+    display: none;
 }
 .change p:nth-of-type(1){
     color: rgb(255,70,70);
@@ -427,6 +547,10 @@
     border: 3px solid var(--background);
     border-radius: 2px;
 }
+.change__chk:hover + label::before{
+    border-color: var(--btn__shadow);
+    background: var(--btn__background);
+}
 .change__chk + label::after{
     content: "";
     position: absolute;
@@ -450,12 +574,159 @@
     font-size: 16px;
     color: var(--background);
     cursor: pointer;
+    position: relative;
+    transition: all 0.1s ease;
+    bottom: 0;
 }
 #change__btn-accept{
     background: var(--o);
     box-shadow: 0 4px 0 var(--o__shadow);
 }
+#change__btn-accept:hover{
+    box-shadow: 0 7px 0 var(--o__shadow);
+    bottom: 3px;
+}
+#change__btn-accept:active{
+    box-shadow: 0 1px 0 var(--o__shadow);
+    bottom: -3px;
+}
 #change__btn-cancel{
     background-color: var(--text);
     box-shadow: 0 4px 0 var(--text__shadow);
+}
+#change__btn-cancel:hover{
+    box-shadow: 0 7px 0 var(--text__shadow);
+    bottom: 3px;
+}
+#change__btn-cancel:active{
+    box-shadow: 0 1px 0 var(--text__shadow);
+    bottom: -3px;
+}
+/*===============ANIMACIONES===============*/
+/*=====X-O=====*/
+.animacion-x{
+    animation: x__llegada 0.6s forwards ease;
+}
+@keyframes x__llegada {
+    0%{
+        transform: rotateZ(0deg) scale(0);
+    }
+    80%{
+        transform: rotateZ(720deg) scale(1.8);
+    }
+    100%{
+        transform: scale(1.3);
+    }
+}
+.animacion-o{
+    animation: o__llegada 0.6s forwards ease;
+}
+@keyframes o__llegada {
+    0%{
+        transform: rotateX(0deg) scale(0);
+    }
+    80%{
+        transform: rotateX(720deg) scale(1.8);
+    }
+    100%{
+        transform: scale(1.3);
+    }
+}
+.animacion-x-o{
+    animation: x-o__llegada 3s forwards ease;
+}
+@keyframes x-o__llegada {
+    0%{
+        transform: rotateX(0deg) rotateZ(0deg) scale(0);
+    }
+    90%{
+        transform: rotateX(3600deg) rotateZ(180deg) scale(2);
+    }
+    100%{
+        transform: scale(1.3);
+    }
+}
+.animacion-o-x{
+    animation: o-x__llegada 3s forwards ease;
+}
+@keyframes o-x__llegada {
+    0%{
+        transform: rotateX(0deg) rotateY(0deg) scale(0);
+    }
+    90%{
+        transform: rotateX(720deg) rotateY(3420deg) scale(2);
+    }
+    100%{
+        transform: scale(1.3);
+    }
+}
+/*=====ESTILOS-NECESARIOS-PARA-TAPAR-LAS-CELDAS-DURANTE-LA-ANIMACION=====*/
+.game__cover::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+/*==========VENTANAS-EMERGENTES==========*/
+/*=====WINDOWS=====*/
+.animacion-windows{
+    animation: windows__llegada 0.7s forwards ease;
+}
+@keyframes windows__llegada {
+    100%{
+        background: rgb(0, 0, 0, 0.35);
+    }
+}
+
+/*=====CHANGE=====*/
+.animation-change{
+    animation: change__llegada 0.3s forwards ease;
+}
+@keyframes change__llegada {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+/*=====WIN=====*/
+.animation-win{
+    animation: win__llegada 0.3s forwards ease;
+}
+@keyframes win__llegada {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+/*==========MEDIA==========*/
+@media (min-height: 800px){
+    body{
+        height: 100vh;
+    }
+}
+@media (max-width: 375px) {
+    .main{
+        padding-top: 10px;
+    }
+    .menu,.game{
+        min-width: 100vw;
+        
+    }
+    
+}
+@media (max-width: 320px){
+    .game__gamegrid{
+        grid-template-columns: repeat(3,1fr);
+        min-width: 100vw;
+    }
 }
