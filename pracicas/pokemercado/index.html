@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeMarket</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/75578a8f34.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- desde aqui -->
+    <header class="header flex-column">
+        <div class="top flex-row">
+            <div class="top__logo flex-row">
+                <img src="/recursos/logo.png" alt="" class="top__img">
+                <p>Poke<br>Market</p>
+            </div>
+            <form action="" method="get" class="search__form flex-row">
+                <input  type="text" name="" id="" placeholder="Search..." class="search__input">
+                <i class="fa-solid fa-magnifying-glass search__icon"></i>
+            </form>
+            <div class="profile flex-row">
+                <p class="profile__name">Professor <br> Samuel Oak</p>
+                <img src="/recursos/Professor_Oak.png" alt="" class="profile__img">
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+        </div>
+        <nav class="nav">
+            <ul class="nav__index flex-row">
+                <li class="nav__link">Pokemons</li>
+                <li class="nav__link prox">Beries</li>
+                <li class="nav__link prox">Items</li>
+                <li class="nav__link prox">CDs</li>
+                <li class="nav__link">Product information</li>
+            </ul>
+        </nav>
+    </header>
+    <!-- hasta aqui, siempre visible -->
+    <main class="main">
+        <form action="" method="get" class="filter">
+            <h3 class="h3">Type</h3>
+            <div class="chks">
+                
+            </div>
+            <h3 class="h3">Gender</h3>
+            <div class="radio">
+                <input type="radio" name="" id="male" class="radio__input">
+                <label for="male"><img src="./recursos/male.png" alt=""></label>
+                <input type="radio" name="" id="female" class="radio__input">
+                <label for="female"><img src="./recursos/female.png" alt=""></label>
+                <input type="radio" name="" id="genderless" class="radio__input">
+                <label for="genderless"><img src="./recursos/genderless.png" alt=""></label>
+            </div>
+            <h3 class="h3">Ataques</h3>
+            <div class="attacks">
+                <div class="container-slt">
+                    <input type="text" name="" id="atk__input-1" placeholder="Any attack" class="option__input">
+                    <div id="atk-1" class="select">
+                        
+                    </div>
+                </div>
+                <div class="container-slt">
+                    <input type="text" name="" id="atk__input-2" placeholder="Any attack" class="option__input">
+                    <div id="atk-2" class="select">
+                        
+                    </div>
+                </div>
+                <div class="container-slt">
+                    <input type="text" name="" id="atk__input-3" placeholder="Any attack" class="option__input">
+                    <div id="atk-3" class="select">
+                        
+                    </div>
+                </div>
+                <div class="container-slt">
+                    <input type="text" name="" id="atk__input-4" placeholder="Any attack" class="option__input">
+                    <div id="atk-4" class="select">
+                        
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="container-pm">
+
+        </div>
+        <div class="load">
+            <div class="load__extern"></div>
+            <div class="load__intern"></div>
+            <div class="load__center"></div>
+        </div>
+    </main>
+    <script src="/js/index.js"></script>
+</body>
+</html>
